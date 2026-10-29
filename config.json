@@ -1,0 +1,29 @@
+{
+  "name": "Suporte Central",
+  "subtitle": "Chamados e suporte técnico",
+  "plural": "chamados",
+  "singular": "Chamado",
+  "fields": [
+    {
+      "key": "assunto",
+      "label": "Assunto",
+      "type": "text"
+    },
+    {
+      "key": "solicitante",
+      "label": "Solicitante",
+      "type": "text"
+    },
+    {
+      "key": "status",
+      "label": "Status",
+      "type": "select",
+      "options": [
+        "Aberto",
+        "Em andamento",
+        "Resolvido",
+        "Fechado"
+      ]
+    }
+  ]
+}
