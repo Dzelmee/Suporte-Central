@@ -6,7 +6,7 @@ import {randomUUID} from 'node:crypto';
 const ROOT=dirname(fileURLToPath(import.meta.url));
 const cfg=JSON.parse(await readFile(join(ROOT,'config.json'),'utf8'));
 const DB=join(ROOT,'data','records.json');
-const TYPES={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8'};
+const TYPES={'.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'text/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.svg':'image/svg+xml'};
 const MAX_BODY=32*1024;
 let queue=Promise.resolve();
 async function readDB(){try{return JSON.parse(await readFile(DB,'utf8'))}catch(e){if(e.code==='ENOENT')return [];throw e}}
@@ -23,7 +23,7 @@ if(match&&req.method==='PUT'){const body=await bodyJSON(req);const error=validat
 if(match&&req.method==='DELETE'){const removed=await mutate(items=>{const index=items.findIndex(r=>r.id===match[1]);if(index<0)return false;items.splice(index,1);return true});return removed?respond(res,200,{deleted:true}):respond(res,404,{error:'Registro não encontrado'})}
 if(path.startsWith('/api/'))return respond(res,404,{error:'Rota não encontrada'});
 if(req.method!=='GET'&&req.method!=='HEAD')return respond(res,405,{error:'Método não permitido'});
-const files={'/':'index.html','/index.html':'index.html','/app.js':'app.js','/styles.css':'styles.css'};
+const files={'/':'index.html','/index.html':'index.html','/app.js':'app.js','/styles.css':'styles.css','/art.svg':'art.svg','/shirt.svg':'shirt.svg','/jacket.svg':'jacket.svg','/pants.svg':'pants.svg'};
 const file=files[path];if(!file){res.writeHead(404);return res.end('Not found')}
 const data=await readFile(join(ROOT,'public',file));res.writeHead(200,{'Content-Type':TYPES[extname(file)],'X-Content-Type-Options':'nosniff'});res.end(req.method==='HEAD'?undefined:data);
 }catch(e){if(e.code==='ENOENT'){res.writeHead(404);return res.end('Not found')}respond(res,e.status||500,{error:e.status?e.message:'Erro interno do servidor'});if(!e.status)console.error(e)}})}

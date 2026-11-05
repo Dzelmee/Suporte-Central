@@ -1,56 +1,26 @@
-# Suporte Central
+# nexo.support — O suporte certo, na hora certa.
 
-Chamados e suporte técnico. Aplicação demonstrativa full stack com interface responsiva e API REST.
+Projeto Full Stack demonstrativo, com interface própria para o segmento **support**.
 
-## Tecnologias
+## Stack
+HTML5, CSS3 (Scroll-Driven Animations, layouts responsivos), JavaScript ES Modules, Node.js (HTTP nativo), JSON local.
 
-- Front-end: HTML5, CSS3, JavaScript moderno (sem frameworks).
-- Back-end: Node.js 22+ (servidor HTTP nativo).
-- Persistência: arquivo JSON local com escrita serializada.
-- Testes: `node:test` e `node:assert`.
-
-## Rodar localmente
-
-```bash
-npm start
-```
-
-Acesse http://localhost:3000. Para trocar a porta: `PORT=4000 npm start` (PowerShell: `$env:PORT=4000; npm start`).
-
-## Testar
-
+## Executar
 ```bash
 npm test
+npm start
 ```
+Acesse http://localhost:3000. Configure `PORT` para mudar a porta.
 
-## API
+## Funcionalidades
+- Operações CRUD com persistência em arquivo JSON e validação no servidor.
+- Busca, formulários em diálogo nativo, métricas calculadas a partir dos registros.
+- Tema claro/escuro salvo no navegador, parallax e animações progressivas (com redução de movimento).
+- Layout específico do produto e seções editoriais com fotografias externas.
+- Indicadores por tipo de registro.
 
-| Método | Endpoint | Função |
-| --- | --- | --- |
-| GET | `/api/health` | Verificar servidor |
-| GET | `/api/records` | Listar |
-| POST | `/api/records` | Criar |
-| PUT | `/api/records/:id` | Atualizar |
-| DELETE | `/api/records/:id` | Excluir |
+## Limitações
+Projeto de portfólio: sem autenticação, multiusuários, pagamentos reais ou banco de dados de produção. Fotografias remotas precisam de conexão à internet. Estatísticas exibidas são calculadas a partir dos dados salvos e começam zeradas. A checagem de conflito de agenda na interface não é garantia de exclusividade sob concorrência no servidor.
 
-Exemplo POST:
-
-```json
-{
-  "assunto": "Exemplo",
-  "solicitante": "Exemplo",
-  "status": "Aberto"
-}
-```
-
-## Recursos
-
-CRUD completo, busca, filtro, indicadores, exportação CSV, validação no servidor, interface mobile e testes automatizados.
-
-## Limitações importantes
-
-**Projeto de portfólio, não produto pronto para produção.** Não possui login, permissões, banco SQL, integração com pagamentos, controle de concorrência entre múltiplas instâncias ou backup automático. Dados ficam no servidor em `data/records.json` (ignorado pelo Git). Em hospedagens efêmeras, os registros podem ser perdidos. Para produção, adicione banco de dados, autenticação e deploy com armazenamento persistente.
-
-## GitHub
-
-Crie um repositório com o nome `suporte-central`, envie os arquivos e adicione screenshots da aplicação em execução. Não inclua dados pessoais reais.
+## Fotos e licença
+Imagens remotas hospedadas no Unsplash (https://unsplash.com/license). Conferir direitos de pessoas, marcas e condições atuais antes de uso comercial. URLs: https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=85, https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1100&q=85.

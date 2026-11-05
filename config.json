@@ -1,8 +1,8 @@
 {
-  "name": "Suporte Central",
-  "subtitle": "Chamados e suporte técnico",
-  "plural": "chamados",
-  "singular": "Chamado",
+  "name": "Central de Suporte",
+  "subtitle": "Resolva melhor. Acompanhe tudo.",
+  "plural": "registros",
+  "singular": "Registro",
   "fields": [
     {
       "key": "assunto",
@@ -15,14 +15,23 @@
       "type": "text"
     },
     {
+      "key": "prioridade",
+      "label": "Prioridade",
+      "type": "select",
+      "options": [
+        "Baixa",
+        "Média",
+        "Alta"
+      ]
+    },
+    {
       "key": "status",
       "label": "Status",
       "type": "select",
       "options": [
         "Aberto",
-        "Em andamento",
-        "Resolvido",
-        "Fechado"
+        "Em atendimento",
+        "Resolvido"
       ]
     }
   ]
