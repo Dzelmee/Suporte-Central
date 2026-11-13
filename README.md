@@ -1,26 +1,37 @@
-# nexo.support — O suporte certo, na hora certa.
+# nexo.support
 
-Projeto Full Stack demonstrativo, com interface própria para o segmento **support**.
+Organizei o fluxo de solicitações em uma interface que permite cadastrar, localizar, atualizar e acompanhar registros.
 
-## Stack
-HTML5, CSS3 (Scroll-Driven Animations, layouts responsivos), JavaScript ES Modules, Node.js (HTTP nativo), JSON local.
+É um projeto de portfólio voltado a **atendimentos e solicitações de suporte**. Trabalhei tanto na apresentação visual quanto nas operações de cadastro e consulta dos dados.
 
-## Executar
+## O que implementei
+
+- Cadastro, edição e exclusão de registros, com validação no servidor.
+- Busca e formulários para trabalhar com os dados.
+- Indicadores calculados a partir dos registros existentes.
+- Interface responsiva, tema claro/escuro e animações com suporte a redução de movimento.
+
+## Tecnologias
+
+HTML, CSS, JavaScript com ES Modules e Node.js usando o módulo HTTP nativo. Os dados são mantidos em um arquivo JSON local.
+
+## Executar localmente
+
 ```bash
 npm test
 npm start
 ```
-Acesse http://localhost:3000. Configure `PORT` para mudar a porta.
 
-## Funcionalidades
-- Operações CRUD com persistência em arquivo JSON e validação no servidor.
-- Busca, formulários em diálogo nativo, métricas calculadas a partir dos registros.
-- Tema claro/escuro salvo no navegador, parallax e animações progressivas (com redução de movimento).
-- Layout específico do produto e seções editoriais com fotografias externas.
-- Indicadores por tipo de registro.
+A aplicação abre em `http://localhost:3000`. É possível alterar a porta pela variável `PORT`.
 
-## Limitações
-Projeto de portfólio: sem autenticação, multiusuários, pagamentos reais ou banco de dados de produção. Fotografias remotas precisam de conexão à internet. Estatísticas exibidas são calculadas a partir dos dados salvos e começam zeradas. A checagem de conflito de agenda na interface não é garantia de exclusividade sob concorrência no servidor.
+## O que ainda falta para produção
 
-## Fotos e licença
-Imagens remotas hospedadas no Unsplash (https://unsplash.com/license). Conferir direitos de pessoas, marcas e condições atuais antes de uso comercial. URLs: https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=85, https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1100&q=85.
+Este é um projeto demonstrativo, sem autenticação, controle de acesso por usuário ou banco de dados de produção. Os dados são armazenados localmente em JSON; não há suporte garantido a múltiplas instâncias ou concorrência. As imagens externas dependem de conexão com a internet.
+
+## Imagens
+
+Imagens utilizadas do Unsplash, conforme a [licença da plataforma](https://unsplash.com/license).
+
+Referências usadas neste projeto:
+- https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=85
+- https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1100&q=85.
